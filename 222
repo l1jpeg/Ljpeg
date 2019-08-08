@@ -1,0 +1,14 @@
+import vk_api
+import time
+from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
+token= "6a3c5c291c5cae50605e08dde9ca92357a319e3690aede92cb6d144f36e8d91af16f10c783307dabdcb37" 
+group_id= "183314178" 
+
+vk_session = vk_api.VkApi(token = token) 
+longpoll = VkBotLongPoll(vk_session, group_id) 
+vk = vk_session.get_api()
+sms = 0
+while sms < 1000000:
+		vk.wall.createComment(owner_id = 357644262, post_id = 66086, from_group = 183314178, message = "❤") 
+		sms += 1
+		time.sleep(3)
